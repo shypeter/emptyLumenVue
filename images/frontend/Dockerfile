@@ -18,7 +18,10 @@ RUN chmod -R 755 node_modules/
 # Build the application
 RUN npm run build
 
-FROM nginx:alpine AS production-stage
-COPY --from=build-stage /app/dist /var/www/frontend/dist
-EXPOSE 80
+#FROM nginx:alpine AS production-stage
+#COPY --from=build-stage /app/dist /var/www/frontend/dist
+EXPOSE 5173
+
+ENV HOST=0.0.0.0
+
 CMD ["nginx", "-g", "daemon off;"]
