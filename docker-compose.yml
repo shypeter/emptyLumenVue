@@ -35,7 +35,7 @@ services:
     environment:
       APP_ENV: local
       APP_DEBUG: 'true'
-      APP_KEY: SomeRandomKey!!!
+      APP_KEY: base64:6kZxYM1lWPUg1qQnLJHHAXLpJDhQGXHN0ymEV3JsvNE=
       APP_LOCALE: en
       APP_FALLBACK_LOCALE: en
       DB_CONNECTION: mysql

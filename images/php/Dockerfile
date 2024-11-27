@@ -1,6 +1,8 @@
 FROM php:8.2.25-fpm-alpine3.20
 # lumen packages
 RUN docker-php-ext-install mysqli pdo_mysql
+# 安裝 Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # memcached
 ENV MEMCACHED_DEPS="zlib-dev libmemcached-dev cyrus-sasl-dev"
 RUN apk add --no-cache --update libmemcached-libs zlib
